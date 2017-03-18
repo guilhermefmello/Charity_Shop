@@ -26,14 +26,37 @@ $navbar-default-bg: #08088A;
   float: left;
 }
 
-#sign_in {
-  float: right;
-  margin: 0 5% 0 0;
-}
 
 #main_wrap {
   width: 100%;
   float: left;
   margin: 20px 5% 0 5%;
+}
+
+#logo{
+  
+  float:left;
+  font-size: 1.7em;
+  color:#fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+}
+
+#logo:hoover {
+  
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.center {
+   text-align: center;
+}
+
+.jumbotron {
+  
+  background-color: green;
 }
 
