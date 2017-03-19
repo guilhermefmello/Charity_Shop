@@ -27,40 +27,39 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        redirect_to @product, :flash => {success: 'Product was successfully created.'} 
+        
       else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        render 'new' 
+        
       end
     end
-  end
+  
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    respond_to do |format|
+    
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
+       redirect_to @product, :flash => {success: 'Product was successfully updated.' }
+       
       else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        render 'edit'
+        
       end
     end
-  end
+  
 
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
     @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
+    
+     redirect_to products_url, :flash => {danger: 'Product was successfully deleted.' }
+      
     end
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   get 'page/about'
 
-  get 'page/faqs'
-
   get 'page/contact'
 
  
