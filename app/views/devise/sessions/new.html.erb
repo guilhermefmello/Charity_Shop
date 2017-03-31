@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                <div class="panel-body">
+                <%= form_for(resource, :html => {class: "form-horizontal",role: "form"} ,as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                    <div class="form-group" >
+                         <%= f.label :email,  class:"col-sm-3 control-label" %>
+                        <div class="col-sm-9">
+                         <%= f.email_field :email, class:"form-control", placeholder:"Email", autofocus: true %>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                  
+                            <%= f.label :password, class:"col-sm-3 control-label"%>
+                        <div class="col-sm-9">
+                               <%= f.password_field :password, class:"form-control", placeholder:"Password", autocomplete: "off" %>
+                        </div>
+                    </div>
+
+                     <% if devise_mapping.rememberable? %>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                    
+                       <%= f.check_box :remember_me%>
+                       <%= f.label :remember_me %>
+                        
+                        </div>    
+                    </div>
+                    <% end %>
+
+                    <div class="form-group last">
+                        <div class="col-sm-offset-3 col-sm-9">
+                           
+                                <%= f.submit "Log in",class:"btn btn-success btn-sm" %>
+                                 <button type="reset" class="btn btn-default btn-sm">
+                                Reset</button>
+                        </div>
+                    </div>
+                    <% end %>
+
+                </div>
+                <div class="panel-footer">
+                   Not Registed?
+                    <%= render "devise/shared/links" %></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
