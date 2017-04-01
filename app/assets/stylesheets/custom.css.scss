@@ -2,6 +2,7 @@ $navbar-default-bg: #08088A;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ $navbar-default-bg: #08088A;
   color: #fff;
   padding: 0 20px 0 20px;
   text-decoration: none;
+  
 }
 
 #page_nav {
@@ -32,6 +34,7 @@ $navbar-default-bg: #08088A;
   letter-spacing: -1px;
   font-weight: bold;
 
+
 }
 
 #logo:hoover {
@@ -49,4 +52,3 @@ $navbar-default-bg: #08088A;
   
   background-color: green;
 }
-
