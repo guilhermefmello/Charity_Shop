@@ -1,6 +1,7 @@
-$navbar-default-bg: #08088A;
+$navbar-default-bg: #E8F5E9;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 
 * {
@@ -10,26 +11,40 @@ $navbar-default-bg: #08088A;
 
 
 
+.header_top{
+
+background-color:#4CAF50;
+}
+
+
+
 #page_nav a, #sign_in a {
-  line-height: 40px;
-  color: #fff;
+  line-height: 65px;
+  color: black;
   padding: 0 20px 0 20px;
   text-decoration: none;
   
 }
 
+
+
+a:hover {
+color:#FF5722;
+}
+
+
 #page_nav {
   margin: 0 0 0 5%;
   float: left;
+   color: black;
 }
-
 
 
 #logo{
   
   float:left;
   font-size: 1.7em;
-  color:#fff;
+  color:#FF5722;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -37,9 +52,9 @@ $navbar-default-bg: #08088A;
 
 }
 
-#logo:hoover {
+#logo:hover {
   
-  color: #fff;
+  color: #FF5722;
   text-decoration: none;
 
 }
@@ -48,7 +63,3 @@ $navbar-default-bg: #08088A;
    text-align: center;
 }
 
-.jumbotron {
-  
-  background-color: green;
-}
