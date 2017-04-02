@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Online Charaty Shop</title>
+  <title>Online Charity Shop</title>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<%=render 'layouts/header'%>
 <%=render 'layouts/navigation'%>
 <div class="container">
 <%=render 'layouts/messages'%>
@@ -16,6 +17,10 @@
   <%= yield %>
   
 </div>
+
+
+
+
    
 </body>
 </html>

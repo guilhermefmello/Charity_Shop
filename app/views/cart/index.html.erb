@@ -1,32 +1,67 @@
-<h1>Your cart</h1>
-<% if @cart.empty? %>
-  <p></p>
-<% else %>
-<%= link_to "Empty cart", cart_clear_path %>
-<% end %>
-<br><br><br>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:15%" class="text-center">Quantity</th>
+							<th style="width:15%" class="text-center">Price</th>
+							<th style="width:15%" class="text-center">Subtotal</th>
+					
+						</tr>
+					</thead>
+					
+				
+					<% if @cart.empty? %>
+                        <p></p>
+                     <% else %>
+               <%= link_to "Empty cart", cart_clear_path %>
+                       <% end %>
+                   <br><br><br>
 
-<% total = 0 %>
-
-<!-- Accessing the cart session hash ["1",1], where "1" is the product id.
--->
-
-<% @cart.each do |id, qty| %>
-  <% product = Product.find_by_id(id) %>
-  
-  <ul>
-  <li>
-    <%= link_to product.title, product %>
-    <p><%= product.description %></p>
-    <p><%= number_to_currency(product.price, unit: '€') %></p>
-    <p>Quantity: <%= qty %></p>
-  </li>
-  </ul>
-
-  <% total += qty*product.price %>
-<% end %>
-
-<b>Total: <%= number_to_currency(total, unit: '€') %></b>
-
-
-
+                   <% total = 0 %>
+                   
+                   <% @cart.each do |id, qty| %>
+                    <% product = Product.find_by_id(id) %>
+                
+					
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									
+									<div class="col-sm-8">
+										 <h4><%= link_to product.title, product, class:"nomargin" %></h4>
+										<p><%= product.description %></p>
+									</div>
+								</div>
+							</td>
+							
+							<td data-th="Quantity" class="text-center">
+								<p><%= qty %></p>
+							</td>
+							<td data-th="Price" class="text-center"><%= number_to_currency(product.price, unit: '€') %></td>
+						
+							 <td data-th="Subtotal" class="text-center"><%= number_to_currency( qty*product.price, unit: '€') %></td>
+							<td class="actions" data-th="">	 
+							<%= link_to "", cart_clear_path, class:"btn btn-danger btn-sm fa fa-trash-o" %>						
+							</td>
+						</tr>
+					</tbody>
+					
+					
+					<tfoot>
+					<% total += qty*product.price %>
+						<% end %>
+						
+						<tr>
+							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="2" class="hidden-xs"></td>
+							
+							<td class="text-center"><strong>Total: <%= number_to_currency(total, unit: '€') %></strong></td>
+							<!--<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>-->
+						</tr>
+					</tfoot>
+					
+				</table>
+</div>

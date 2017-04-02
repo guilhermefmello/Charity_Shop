@@ -2,8 +2,8 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 p, ol, ul, td {
@@ -15,11 +15,11 @@ p, ol, ul, td {
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 a {
-  color: #000;
+  color: black;
 
   &:visited {
     color: #666;
@@ -35,7 +35,7 @@ div {
 }
 
 #notice {
-  color: green;
+  color: #FF5722;
 }
 
 
