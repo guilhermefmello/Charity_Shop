@@ -263,7 +263,7 @@ footer p {
 }
 
 .headline{
-    opacity:0.7;
+    opacity:1;
 }
 
 
@@ -273,16 +273,39 @@ footer p {
 }
 
 .headline h1 {
-    font-size: 130px;
+    font-size: 100px;
     color: #890000;
     background: #fff;
     margin-right:30px;
-    background: rgba(203,236,236,0.9);
+    background: rgba(203,236,236,0.2);
+    opacity:0.8;
 }
 
 .headline h2 {
-    font-size: 77px;
+    font-size: 60px;
     color: #9a2b2b;
-    //background: #fff;
-    //background: rgba(255,255,255,0.9);
+    background: #fff;
+    margin-right:30px;
+    background: rgba(203,236,236,0.2);
+    opacity:0.9;
+}
+
+.container{
+    padding-right:55px;
+}
+
+.featurette-heading{
+    color: #9a2b2b;
+}
+
+.text-muted1{
+    color: #5A5A5A;
+}
+
+.text-muted2{
+    color: #5A5A5A;
+}
+
+.text-muted3{
+    color: #5A5A5A;
 }
