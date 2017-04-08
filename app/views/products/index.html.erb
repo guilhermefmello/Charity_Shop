@@ -1,3 +1,5 @@
+
+
 <h1>Listing Products</h1>
 
 <table>
@@ -18,7 +20,7 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
+        <td><%= link_to (image_tag product.image_url), product%></td>
         <td><%= product.price %></td>
         <td><%= product.category %></td>
         <td><%= product.subcategory %></td>
@@ -30,7 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
