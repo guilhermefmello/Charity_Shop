@@ -11,15 +11,15 @@
 						</tr>
 					</thead>
 					
-				
-					<% if @cart.empty? %>
+							<% if @cart.empty? %>
                         <p></p>
                      <% else %>
-               <%= link_to "Empty cart", cart_clear_path %>
+            
                        <% end %>
                    <br><br><br>
 
                    <% total = 0 %>
+				
                    
                    <% @cart.each do |id, qty| %>
                     <% product = Product.find_by_id(id) %>
@@ -59,7 +59,8 @@
 							<td colspan="2" class="hidden-xs"></td>
 							
 							<td class="text-center"><strong>Total: <%= number_to_currency(total, unit: '€') %></strong></td>
-							<!--<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>-->
+			  <td><%= link_to " Empty Cart", cart_clear_path, class:"btn btn-success btn-block fa fa-hand-o-right" %></td>
+						
 						</tr>
 					</tfoot>
 					
