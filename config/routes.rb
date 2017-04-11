@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   get 'page/contact'
 
+  get "/Charity_Shop/app/views/products/index.html.erb", to: "products#index"
  
 end
+
