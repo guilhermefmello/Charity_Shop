@@ -1,5 +1,3 @@
-
-
 <h1>Listing Products</h1>
 
 <table>
@@ -20,15 +18,19 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= product.description %></td>
-        <td><%= link_to (image_tag product.image_url), product%></td>
+        <%= link_to (image_tag product.image_url), product %>
         <td><%= product.price %></td>
         <td><%= product.category %></td>
         <td><%= product.subcategory %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td> 
-        <td><%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><a href="/cart/<%= product.id %>">Add to Cart</a></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
