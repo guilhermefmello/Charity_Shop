@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
     def self.search(search)
-    where(" LIKE ?", "%#{search}%")
+    where("productname LIKE ?", "%#{search}%")
     end
 
 validates :title, presence:true, length: {minimum: 4, maximum: 50}
