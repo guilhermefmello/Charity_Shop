@@ -1,4 +1,10 @@
+<p id="notice"><%= notice %></p>
+<%= form_tag(product_path, :method => "get", id:"search-form") do %>
+<%= text_field_tag :search, params[search], placeholder: "Search by productname" %>
+<%= submit_tag "Search" %>
+<% end %>
 <h1>Listing Products</h1>
+
 
 <table>
   <thead>
