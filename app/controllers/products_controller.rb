@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
  
   def index
     @products = Product.all
+    if params[:search]
+      @products = Products.search(params[:search]).order("created_at DESC")
+    else
+      @products = Products.all.order('created_at DESC')
+    end
   end
 
  
