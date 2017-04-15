@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
 
-  resources :products
+  resources :products 
   
   root 'page#home'
   
