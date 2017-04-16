@@ -1,10 +1,17 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :ensure_admin, :only => [:edit, :destroy]
   
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy] 
 
  
   def index
     @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order('created_at DESC')
+    end
   end
 
 
@@ -69,6 +76,11 @@ class ProductsController < ApplicationController
       
     end
   
+  def ensure_admin
+       unless current_user && current_user.admin?
+         render :text => "Access Error Message", :status => :unauthorized
+       end
+     end
 
   
     # Using callbacks to share common setup or constraints between actions.
