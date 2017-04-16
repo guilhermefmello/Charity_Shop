@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+    
+    
+     
 
 
 	def self.search(search)
@@ -11,6 +14,12 @@ validates :image_url, presence: true
 validates :price, presence: true
 validates :category, presence: true
 validates :subcategory, presence: true
+
+
+
+
+
+
 
 
 end
