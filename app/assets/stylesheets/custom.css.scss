@@ -5,7 +5,17 @@ $navbar-default-bg: #E8F5E9;
 
 .header_top{
 
-background-color:#5A5A5A;
+background-color:#9a2b2b;
+}
+
+
+.header_top a:hover {
+color:#FF5722;
+}
+
+.header_top ul li a{
+    
+    color:white;
 }
 
 
@@ -28,9 +38,6 @@ font-size: 18px;
   
 }
 
-a:hover {
-color:#FF5722;
-}
 
 
 #page_nav {

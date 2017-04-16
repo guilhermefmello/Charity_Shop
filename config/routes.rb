@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :profiles
   devise_for :users
   
   get '/cart' => 'cart#index'
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get 'page/contact'
 
   get "/Charity_Shop/app/views/products/index.html.erb", to: "products#index"
+
+  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
  
 end
 
