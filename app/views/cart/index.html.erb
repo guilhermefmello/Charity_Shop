@@ -55,7 +55,8 @@
 						<% end %>
 						
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							 <td><%= link_to 'Continue Shopping', products_path, class:"fa fa-angle-left btn btn-warning" %></td>
+
 							<td colspan="2" class="hidden-xs"></td>
 							
 							<td class="text-center"><strong>Total: <%= number_to_currency(total, unit: '€') %></strong></td>
