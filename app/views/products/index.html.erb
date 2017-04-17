@@ -21,7 +21,7 @@
                             <p class="lead">
                                <%= number_to_currency(product.price, unit: '€')%></p>
                         </div>
-                    
+                    <% if current_user.admin? %>
                         
 
                      <div class="button-wrapper ">
@@ -33,13 +33,13 @@
                  <button class="btn btn-danger btn-md fa fa-trash-o"> <%= link_to ' Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></a></button>
                        </div>
 
-                    
+                     <% else %>
                 
                         <div class="button-wrapper ">
                  <button class="btn btn-success btn-sm "><a class="glyphicon glyphicon-shopping-cart" href="/cart/<%= product.id %>">Cart </a></button>
                        </div>
                          
-                    
+                    <% end %>
                          
                  </div>
                
@@ -50,8 +50,8 @@
 
     <%end%>
  </div>
-
+<% if current_user.admin? %>
  <div class="button-wrapper ">
  <button class="btn btn-success btn-sm "><%= link_to 'New Product', new_product_path %></button>
  </div>
-
+<% end %>
